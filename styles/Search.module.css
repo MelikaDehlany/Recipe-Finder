@@ -1,0 +1,301 @@
+.favoritesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.favoritesTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.favoritesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.emptyState p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.browseLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background 0.3s;
+}
+
+.browseLink:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .favoritesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .favoritesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .emptyState {
+    padding: 2rem 1rem;
+  margin: 0 1rem;
+  text-align: center;
+  }
+}
+.searchContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.searchTypeTabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabButton {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+}
+
+.tabButton:hover {
+  color: #ff7b25;
+}
+
+.activeTab {
+  color: #ff7b25;
+  font-weight: 500;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff7b25;
+}
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.5rem 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  transition: box-shadow 0.2s;
+}
+
+.searchForm:focus-within {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--text, #333);
+  padding: 0.5rem 0;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background 0.2s;
+  gap: 0.5rem;
+}
+
+.searchButton:hover {
+  background: var(--primary-dark);
+}
+
+.searchButton svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.3em;
+}
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .resultsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--white);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  z-index: 2;
+}
+
+.favoriteButton:hover,
+.favoriteButton.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary-dark, #ff7b25);
+}
+.recipeCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  transition:
+  box-shadow 0.25s cubic-bezier(0.4,2,.6,1),
+  transform 0.25s cubic-bezier(0.4,2,.6,1),
+background 0.18s;}
+
+.recipeCard:hover{
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transform: translateY(-5px) scale(1.002);
+  background: #faf7f3;
+}
+.cardContent {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardActions {
+  margin-top: auto;
+  padding-bottom: 1.2rem; 
+  display: flex;
+  justify-content: center; 
+  gap: 0.5rem;
+  width: 100%;
+}
+.detailsButton {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.detailsButton:hover {
+  background: var(--primary-dark);
+}
+.removeButton {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: #ffeaea;
+  color: #d32f2f;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+  text-align: center;
+  min-width: 120px;
+}
+
+.removeButton:hover {
+  background: #ffd6d6;
+  color: #b71c1c;
+}
+.filterContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  background: var(--white);
+  color: var(--text, #222);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.filterSelect:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.filterSelect option {
+  color: var(--text, #222);
+}
+.cardTitle {
+padding: 10px;
+  text-align: center;
+}
+.recipeMeta{
+  text-align: center;
+}
